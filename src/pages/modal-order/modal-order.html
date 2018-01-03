@@ -1,0 +1,76 @@
+<!--
+  Generated template for the ModalOrderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Nuevo Solicitud</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="close()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    
+    <ion-item>
+      <ion-label>Tipo de Vehiculo</ion-label>
+        <ion-select [(ngModel)]="form.type_vehicle_id">
+          <ion-option value="{{row.code}}" (ionSelect)="getVehicle(row)" 
+            *ngFor="let row of data">{{row.description}} {{row.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>¿Qué dia?</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="form.day"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>¿Que hora?</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="form.hour"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Lavado Motor</ion-label>
+      <ion-checkbox [(ngModel)]="form.services.motor"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cambio de Aceite</ion-label>
+      <ion-checkbox [(ngModel)]="form.services.oil"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Polichado</ion-label>
+      <ion-checkbox [(ngModel)]="form.services.polichado"></ion-checkbox>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            Total
+          </ion-col>
+          <ion-col col-6 item-end id="total">
+              {{total}}
+          </ion-col>
+        </ion-row>
+        
+      </ion-grid>
+
+      <ion-item>
+          <button ion-button (click)="reserve()" full>Solicitar</button>
+      </ion-item>
+    
+    </ion-list>
+    
+</ion-content>
+
