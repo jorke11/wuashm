@@ -11,7 +11,7 @@ import { LoginPage } from '../pages/login/login';
 
 import { ProfilePage } from '../pages/profile/profile'; 
 //import { ServicesPage } from '../pages/services/services';
-import { RoutesPage } from '../pages/routes/routes';
+//import { RoutesPage } from '../pages/routes/routes';
 import { Storage } from '@ionic/storage';
 
 @Component({

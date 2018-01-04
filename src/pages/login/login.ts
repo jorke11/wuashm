@@ -37,7 +37,7 @@ export class LoginPage {
     let param={email:this.email,password:this.password};
     console.log(this.email)
     console.log(this.password)
-    this.http.post(this.ip+"/user/login/",param,{headers:headers})
+    this.http.post(this.ip+"/user/login",param,{headers:headers})
     .map(res=>res.json())
     .subscribe(
       data=>{
