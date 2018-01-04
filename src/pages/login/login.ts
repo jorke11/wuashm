@@ -52,4 +52,8 @@ export class LoginPage {
     );
   }
 
+  newUser(){
+
+  }
+
 }
